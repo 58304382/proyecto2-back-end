@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-COPY . .
+COPY proyecto2Back/proyecto2Back/ ./
 
 RUN dotnet restore
 RUN dotnet publish -c Release -o /app/publish
