@@ -3,10 +3,8 @@ WORKDIR /src
 
 COPY . .
 
-WORKDIR /src/proyecto2Back
-
-RUN dotnet restore
-RUN dotnet publish -c Release -o /app/publish
+RUN dotnet restore "./proyecto2Back/proyecto2Back.csproj"
+RUN dotnet publish "./proyecto2Back/proyecto2Back.csproj" -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
